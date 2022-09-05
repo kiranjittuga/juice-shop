@@ -16,7 +16,7 @@ pipeline {
     stage ('Check-Git-Secrets'){
       steps {
         sh 'rm trufflehog || true'
-        sh 'docker run gesellix/trufflehog  > trufflehog'
+        sh 'docker run gesellix/trufflehog https://github.com/kiranjittuga/juice-shop.git > trufflehog'
         sh 'cat trufflehog'
       }
     } 
